@@ -4,8 +4,8 @@ class Product < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
   validates :name, :image_url, uniqueness: true
   validates :name, :description, length: { minimum: 2 }
-  def f_created_at
-    created_at.strftime("%A, %d %b %Y %l:%M %p")
+  def supplier
+    Supplier.find_by(id: supplier_id)
   end
   def is_discounted?
     price <= 5 
