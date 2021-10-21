@@ -1,0 +1,47 @@
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "test",
+  "price": 4.50,
+  "image_url": "test url",
+  "description": "test"
+}
+
+### Products update
+PATCH  http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "title": "steamed dumplings"
+}
+
+###
+DELETE http://localhost:3000/
+
+###
+GET http://localhost:3000/products
+
+###
+POST http://localhost:3000/suppliers
+Content-Type: application/json
+
+{
+  "name": "test",
+  "email": "test",
+  "phone_number": "test"
+}
+
+### suppliers update
+PATCH  http://localhost:3000/suppliers/1
+Content-Type: application/json
+
+{
+  "name": "test"
+}
+
+###
+DELETE http://localhost:3000/products/
+
+###
+GET http://localhost:3000/suppliers/
