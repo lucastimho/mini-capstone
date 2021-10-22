@@ -13,10 +13,10 @@ class ProductsController < ApplicationController
   end
   def create
     product = Product.new(
-    name: params["name"],
-    price:  params["price"],
-    image_url: params["image_url"],
-    description: params["description"]
+    name: params[:name],
+    price:  params[:price],
+    image_url: params[:image_url],
+    description: params[:description]
     )
     if product.save
       render json: product
@@ -27,10 +27,10 @@ class ProductsController < ApplicationController
   def update
     q = params["id"]
     product = Product.find_by(id: q)
-    product.name = params["title"] || product.name
-    product.price = params["price"] || product.price
-    product.image_url = params["image_url"] || product.image_url
-    product.description = params["description"] || product.description
+    product.name = params[:name] || product.name
+    product.price = params[:price] || product.price
+    product.image_url = params[:image_url] || product.image_url
+    product.description = params[:desciption] || product.description
     if product.save
       render json: product
     else

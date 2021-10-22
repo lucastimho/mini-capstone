@@ -3,7 +3,7 @@ class SuppliersController < ApplicationController
     render json: Supplier.all
   end
   def show
-    q = params["menu"].to_i
+    q = params[:menu]
     render json: Supplier.find_by(id: q)
   end
   def destroy
@@ -13,9 +13,9 @@ class SuppliersController < ApplicationController
   end
   def create
     supplier = Supplier.new(
-    name: params["name"],
-    email:  params["email"],
-    phone_number: params["phone_number"]
+    name: params[:name],
+    email:  params[:email],
+    phone_number: params[:phone_number]
     )
     if supplier.save
       render json: supplier
@@ -26,9 +26,9 @@ class SuppliersController < ApplicationController
   def update
     q = params["id"]
     supplier = Supplier.find_by(id: q)
-    supplier.name = params["name"] || supplier.name
-    supplier.email = params["email"] || supplier.email
-    supplier.phone_number = params["phone_number"] || supplier.phone_number
+    supplier.name = params[:name] || supplier.name
+    supplier.email = params[:email] || supplier.email
+    supplier.phone_number = params[:phone_number] || supplier.phone_number
     if supplier.save
       render json: supplier
     else
