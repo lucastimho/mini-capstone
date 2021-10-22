@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  belongs_to :suppliers
   def index
     render json: Product.all
   end

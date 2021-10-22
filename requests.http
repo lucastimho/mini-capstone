@@ -3,8 +3,7 @@ Content-Type: application/json
 
 {
   "name": "test",
-  "price": 4.50,
-  "image_url": "test url",
+  "price": 1,
   "description": "test"
 }
 
@@ -21,6 +20,8 @@ DELETE http://localhost:3000/
 
 ###
 GET http://localhost:3000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTQyNzN9.E9rLt-N18SbWCxeWk5zzNK4xHgjFAImwIyzaOORPIKU
 
 ###
 POST http://localhost:3000/suppliers
@@ -55,4 +56,13 @@ Content-Type: application/json
   "email": "test@example.com",
   "password": "password",
   "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password"
 }
