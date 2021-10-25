@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  belongs_to :suppliers
+  before_action :authenticate_admin, except: [:show, :index]
   def index
     render json: Product.all
   end
