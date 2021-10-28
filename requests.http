@@ -81,3 +81,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyNzAyM
 GET http://localhost:3000/orders/1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyNzAyMzN9.xnSHkwixeUoyzmT22XEz7JGJdrmXfrlwAksuhJK5pCk
+
+###
+POST http://localhost:3000/cartedproducts.json
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "product_id": 1,
+  "quantity": 1,
+  "status": "purchased",
+  "order_id": 1
+}
