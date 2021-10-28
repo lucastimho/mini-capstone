@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   # Misc
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+  # Cartedproducts
   post "/cartedproducts" => "cartedproducts#create"
+  get "/cartedproducts" => "cartedproducts#index"
   # Orders
   post "orders" => "orders#create"
   get "orders/:id" => "orders#show"

@@ -1,13 +1,16 @@
 class CartedproductsController < ApplicationController
+  before_action :authenticate_user
   def create
     cartedproduct = CartedProduct.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      status: params[:status],
-      order_id: params[:order_id]
+      status: "carted"
     )
     cartedproduct.save
     render json: cartedproduct
+  end
+  def index
+    render json: CartedProduct.where(user_id: current_user.id, status: "carted")
   end
 end

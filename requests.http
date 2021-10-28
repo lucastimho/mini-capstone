@@ -85,11 +85,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyNzAyM
 ###
 POST http://localhost:3000/cartedproducts.json
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1Mjk0OTh9.oRv-vZDLSikX2zUI5sRnHPkioMFo1obd8Ouo5Teepzc
 
 {
-  "user_id": 1,
-  "product_id": 1,
-  "quantity": 1,
-  "status": "purchased",
-  "order_id": 1
+  "product_id": 3,
+  "quantity": 3
 }
+
+###
+GET http://localhost:3000/cartedproducts.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1Mjk0OTh9.oRv-vZDLSikX2zUI5sRnHPkioMFo1obd8Ouo5Teepzc
