@@ -5,6 +5,12 @@ class ProductsController < ApplicationController
       category = Category.find_by(name: params[:category])
       product = category.products
       render json: product
+    elsif params[:sort] == "price"
+      if params[:sort_order] == "desc"
+        # render json: Product.all.order(:price, :desc)
+      else
+        render json: Product.all.order(:price)
+      end
     else
       render json: Product.all
     end
